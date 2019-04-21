@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.platform         = :ios
   s.source           = { :git => "https://github.com/taledog/Arrow.git",
                          :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/arden'
+  s.social_media_url = 'https://weibo.com/arden'
   s.source_files     = "Source/*.swift"
   s.requires_arc     = true
   s.ios.deployment_target = "8.0"
