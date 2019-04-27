@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TaleArrow'
-  s.version          = "5.0.0"
+  s.version          = "5.0.1"
   s.summary          = "Elegant JSON Parsing in Swift"
   s.homepage         = "https://github.com/taledog/Arrow"
   s.license          = { :type => "MIT", :file => "LICENSE" }
