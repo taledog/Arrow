@@ -15,17 +15,17 @@ import CoreGraphics
  A typical implementation would be the following, preferably in an extension
  called `MyModel+JSON` to keep things nice and clean :
  
-        //  MyModel+JSON.swift
-
-        import Arrow
-
-        extension MyModel: ArrowParsable {
-
-            mutating func deserialize(json: JSON) {
-                myVariable <-- json["jsonProperty"]
-                //...
-            }
-        }
+ //  MyModel+JSON.swift
+ 
+ import Arrow
+ 
+ extension MyModel: ArrowParsable {
+ 
+ mutating func deserialize(json: JSON) {
+ myVariable <-- json["jsonProperty"]
+ //...
+ }
+ }
  */
 public protocol ArrowParsable {
     /// Makes sure your models can be constructed with an empty constructor.
@@ -51,14 +51,14 @@ private var useReferenceDate = false
 /**
  This is used to configure NSDate parsing on a global scale.
  
-        Arrow.setDateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZZ")
-        // or
-        Arrow.setUseTimeIntervalSinceReferenceDate(true)
+ Arrow.setDateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZZ")
+ // or
+ Arrow.setUseTimeIntervalSinceReferenceDate(true)
  
  
-For more fine grained control, use `dateFormat` on a per field basis :
+ For more fine grained control, use `dateFormat` on a per field basis :
  
-        createdAt <-- json["created_at"]?.dateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZZ")
+ createdAt <-- json["created_at"]?.dateFormat("yyyy-MM-dd'T'HH:mm:ssZZZZZ")
  */
 public class Arrow {
     /// Sets the defaut dateFormat for parsing NSDates.
@@ -293,8 +293,8 @@ func parseString<T>(_ left: inout T?, string: String) {
 
 func timeIntervalToDate(_ timeInterval: TimeInterval) -> Date {
     return useReferenceDate
-    ? Date(timeIntervalSinceReferenceDate: timeInterval)
-    : Date(timeIntervalSince1970: timeInterval)
+        ? Date(timeIntervalSinceReferenceDate: timeInterval)
+        : Date(timeIntervalSince1970: timeInterval)
 }
 
 func setLeftIfIsResultNonNil<T>(left: inout T, right: JSON?, function: (inout T?, JSON?) -> Void) {
